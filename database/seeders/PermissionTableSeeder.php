@@ -257,6 +257,150 @@ class PermissionTableSeeder extends Seeder
                 'id'    => 60,
                 'title' => 'product_order_details_create',
             ],
+            [
+                'id'    => 61,
+                'title' => 'seller_product_category_edit',
+            ],
+            [
+                'id'    => 62,
+                'title' => 'seller_product_category_show',
+            ],
+            [
+                'id'    => 63,
+                'title' => 'seller_product_category_delete',
+            ],
+            [
+                'id'    => 64,
+                'title' => 'seller_product_category_access',
+            ],
+            [
+                'id'    => 65,
+                'title' => 'seller_product_category_create',
+            ],
+            [
+                'id'    => 66,
+                'title' => 'seller_management_access',
+            ],
+            [
+                'id'    => 67,
+                'title' => 'seller_product_type_show',
+            ],
+            [
+                'id'    => 68,
+                'title' => 'seller_product_type_delete',
+            ],
+            [
+                'id'    => 69,
+                'title' => 'seller_product_type_access',
+            ],
+            [
+                'id'    => 70,
+                'title' => 'seller_product_type_create',
+            ],
+            [
+                'id'    => 71,
+                'title' => 'seller_product_type_edit',
+            ],
+            [
+                'id'    => 72,
+                'title' => 'seller_type_show',
+            ],
+            [
+                'id'    => 73,
+                'title' => 'seller_type_delete',
+            ],
+            [
+                'id'    => 74,
+                'title' => 'seller_type_access',
+            ],
+            [
+                'id'    => 75,
+                'title' => 'seller_type_create',
+            ],
+            [
+                'id'    => 76,
+                'title' => 'seller_type_edit',
+            ],
+            [
+                'id'    => 77,
+                'title' => 'seller_show',
+            ],
+            [
+                'id'    => 78,
+                'title' => 'seller_delete',
+            ],
+            [
+                'id'    => 79,
+                'title' => 'seller_access',
+            ],
+            [
+                'id'    => 80,
+                'title' => 'seller_create',
+            ],
+            [
+                'id'    => 81,
+                'title' => 'seller_edit',
+            ],
+            [
+                'id'    => 82,
+                'title' => 'seller_product_show',
+            ],
+            [
+                'id'    => 83,
+                'title' => 'seller_product_delete',
+            ],
+            [
+                'id'    => 84,
+                'title' => 'seller_product_access',
+            ],
+            [
+                'id'    => 85,
+                'title' => 'seller_product_create',
+            ],
+            [
+                'id'    => 86,
+                'title' => 'seller_product_edit',
+            ],
+            [
+                'id'    => 87,
+                'title' => 'seller_user_status_show',
+            ],
+            [
+                'id'    => 88,
+                'title' => 'seller_user_status_delete',
+            ],
+            [
+                'id'    => 89,
+                'title' => 'seller_user_status_access',
+            ],
+            [
+                'id'    => 90,
+                'title' => 'seller_user_status_create',
+            ],
+            [
+                'id'    => 91,
+                'title' => 'seller_user_status_edit',
+            ],
+            [
+                'id'    => 92,
+                'title' => 'product_measurement_show',
+            ],
+            [
+                'id'    => 93,
+                'title' => 'product_measurement_delete',
+            ],
+            [
+                'id'    => 94,
+                'title' => 'product_measurement_access',
+            ],
+            [
+                'id'    => 95,
+                'title' => 'product_measurement_create',
+            ],
+            [
+                'id'    => 96,
+                'title' => 'product_measurement_edit',
+            ],
         ];
 
         Permission::insert($permissions);

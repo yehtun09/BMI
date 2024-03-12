@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateProductOrderRequest;
 use App\Models\Buyer;
 use App\Models\Product;
 use App\Models\ProductOrder;
+use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,19 +18,23 @@ class ProductOrderController extends Controller
     protected $products;
     protected $product_orders;
     protected $buyers;
+    protected $statues;
 
-    public function __construct(Product $products,ProductOrder $product_orders,Buyer $buyers)
+    public function __construct(Product $products,ProductOrder $product_orders,Buyer $buyers,Status $status)
     {
         $this->products = $products;
         $this->product_orders = $product_orders;
         $this->buyers = $buyers;
+        $this->statues = $status;
     }
 
     public function index()
     {
         abort_if(Gate::denies("product_order_access"), Response::HTTP_FORBIDDEN, "403 Forbidden");
-        $product_orders = $this->product_orders->with('buyer','product')->get();
-        return view('admin.productOrder.index', compact('product_orders'));
+        $product_orders = $this->product_orders->with(['buyer','product','productOrderStatues.status'])->get();
+        // return $product_orders;
+        $statues=$this->statues->all();
+        return view('admin.productOrder.index', compact(['product_orders','statues']));
     }
 
     public function create()

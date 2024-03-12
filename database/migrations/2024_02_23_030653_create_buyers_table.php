@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('address');
             $table->string('phone_no');
             $table->integer('buyer_category')->nullable();
+            $table->string('shop_name')->nullable();
+            $table->text('shop_address')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

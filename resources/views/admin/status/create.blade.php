@@ -5,7 +5,7 @@
         <h5 class="card-header font-weight-bold"> {{ trans('global.create') }}
             {{ trans('cruds.measurement.title_singular') }}</h5>
         <div class="card-body mt-4">
-            <form method="POST" action="{{ route('admin.status.store') }}">
+            <form method="POST" action="{{ route('admin.status-all.store') }}">
                 @csrf
                 <div class="row">
                     <div class="form-group col-5">

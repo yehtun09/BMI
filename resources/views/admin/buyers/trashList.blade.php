@@ -30,6 +30,12 @@
                                 {{ trans('cruds.buyers.fields.buyer_category') }}
                             </th>
                             <th>
+                                {{ trans('cruds.buyers.fields.shop_name') }}
+                            </th>
+                            <th>
+                                {{ trans('cruds.buyers.fields.shop_address') }}
+                            </th>
+                            <th>
                                 {{ trans('cruds.buyers.fields.password') }}
                             </th>
                             <th>
@@ -54,6 +60,12 @@
                                 </td>
                                 <td>
                                     {{ config('constant.buyerCategory.' . $buyer->buyer_category, '') }}
+                                </td>
+                                <td>
+                                    {{ $buyer->shop_name ?? '' }}
+                                </td>
+                                <td>
+                                    {{ $buyer->shop_address ?? '' }}
                                 </td>
                                 <td>
                                     {{ $buyer->password ?? '' }}

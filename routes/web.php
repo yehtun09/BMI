@@ -95,15 +95,56 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('product-order-status','ProductOrderStatusController');
 
     // Status
-    Route::resource('status' ,'StatusController');
+    Route::resource('status-all' ,'StatusController');
 
     Route::post('posts/media', 'PostController@storeMedia')->name('posts.storeMedia');
     Route::post('posts/ckmedia', 'PostController@storeCKEditorImages')->name('posts.storeCKEditorImages');
     Route::resource('posts', 'PostController');
 
-    Route::get('product-order-details/showTrash', 'ProductOrderStatusController@showTrash')->name('product-order-details.showTrash');
-    Route::get('product-order-details/restore/trash/{id}','ProductOrderStatusController@restoreTrash')->name('product-order-details.restore.trash');
-    Route::delete('product-order-details/trashDelete/{id}','ProductOrderStatusController@trashDelete')->name('product-order-details.trashDelete');
+      // Seller Type
+    Route::get('seller-type/showTrash', 'SellerTypeController@showTrash')->name('seller-type.showTrash');
+    Route::get('seller-type/restore/trash/{id}','SellerTypeController@restoreTrash')->name('seller-type.restore.trash');
+    Route::delete('seller-type/trashDelete/{id}','SellerTypeController@trashDelete')->name('seller-type.trashDelete');
+    Route::resource('seller-type','SellerTypeController');
+      
+    // Seller Product Category
+    Route::resource('sellers-product-categories','SellerProductCategoryController');
+
+    // Seller Product Types 
+    Route::resource('seller-product-type','SellerProductTypeController');
+
+    // SellerProduct
+    Route::get('seller-product/trash', 'SellerProductController@showTrash')->name('seller-product.trash');
+    Route::get('seller-product/{id}/restore', 'SellerProductController@restoreTrash')->name('seller-product.restore');
+    Route::delete('seller-product/{id}/trash-delete', 'SellerProductController@trashDelete')->name('seller-product.trashDelete');
+    Route::resource('seller-product', 'SellerProductController');
+    
+    
+    // Seller
+    Route::delete('seller/destroy', 'SellerController@massDestroy')->name('seller.massDestroy');
+    Route::get('seller/showTrash', 'SellerController@showTrash')->name('seller.showTrash');
+    Route::get('seller/restore/trash/{id}','SellerController@restoreTrash')->name('seller.restore.trash');
+    Route::delete('seller/trashDelete/{id}','SellerController@trashDelete')->name('seller.trashDelete');
+    Route::resource('seller','SellerController');
+
+    // Seller User Status 
+    Route::get('seller-user-statuses/trash','SellerUserStatusController@showTrash')->name('seller-user-statuses.trash');
+    Route::get('seller-user-statuses/restore/{id}','SellerUserStatusController@restoreTrash')->name('seller-user-statuses.restore');
+    Route::delete('seller-user-statuses/trash-delete/{id}','SellerUserStatusController@trashDelete')->name('seller-user-statuses.trashDelete');
+    Route::resource('seller-user-statuses', 'SellerUserStatusController');
+
+    // ProductMeasurement
+    Route::get('product-measurements/showTrash', 'ProductMeasurementController@showTrash')->name('product-measurements.showTrash');
+    Route::get('product-measurements/restore/trash/{id}','ProductMeasurementController@restoreTrash')->name('product-measurements.restore.trash');
+    Route::delete('product-measurements/trashDelete/{id}','ProductMeasurementController@trashDelete')->name('product-measurements.trashDelete');
+    Route::get('product-measurements/getmeasurement/{id}','ProductMeasurementController@getmeasurement')->name('product-measurements.getmeasurement');
+    Route::post('product-measurements/media', 'ProductMeasurementController@storeMedia')->name('products.storeMedia');
+    Route::resource('product-measurements','ProductMeasurementController');
+
+    // Post
+    Route::get('product-order-details/showTrash', 'ProductOrderDetailController@showTrash')->name('product-order-details.showTrash');
+    Route::get('product-order-details/restore/trash/{id}','ProductOrderDetailController@restoreTrash')->name('product-order-details.restore.trash');
+    Route::delete('product-order-details/trashDelete/{id}','ProductOrderDetailController@trashDelete')->name('product-order-details.trashDelete');
     Route::resource('product-order-details','ProductOrderDetailController');
 
 

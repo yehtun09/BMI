@@ -20,14 +20,14 @@
                             {{ $product_order->id }}
                         </td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <th>
                             {{ trans('cruds.product_order.fields.product_id') }}
                         </th>
                         <td>
                             {{ $product_order->product->name ?? ' ' }}
                         </td>
-                    </tr>
+                    </tr> --}}
                     <tr>
                         <th>
                             {{ trans('cruds.product_order.fields.buyer_id') }}
@@ -44,7 +44,7 @@
                             {{ $product_order->order_date ?? ' ' }}
                         </td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <th>
                             {{ trans('cruds.product_order.fields.qty') }}
                         </th>
@@ -59,7 +59,7 @@
                         <td>
                             {{ $product_order->total_amount ?? ' '}}
                         </td>
-                    </tr>
+                    </tr> --}}
                     <tr>
                         <th>
                             {{ trans('cruds.product_order.fields.delivery_address') }}

@@ -11,6 +11,8 @@ class ProductOrder extends Model
     use SoftDeletes;
     use HasFactory;
 
+    protected $table = 'product_orders';
+    // protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
     protected $fillable = [
         'product_id',
         'buyer_id',
@@ -28,4 +30,23 @@ class ProductOrder extends Model
     public function product(){
         return $this->belongsTo(Product::class,'product_id');
     }
+
+    public function productOrderStatues()
+    {
+        return $this->hasMany(ProductOrderStatus::class,'product_order_id');
+    }
+
+    public function prouductOrderDetails()
+    {
+        return $this->hasMany(ProductOrderDetail::class,'product_order_id');
+    }
+
+    public function statues()
+    {
+        return $this->hasMany(ProductOrderStatus::class);
+    }
+    // public function productMeasurement()
+    // {
+    //     return $this->belongsTo(ProductMeasurement::class);
+    // }
 }

@@ -11,6 +11,7 @@ class ProductOrderStatus extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'product_order_status';
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
     protected $fillable = [
         'product_order_id',

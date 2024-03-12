@@ -35,7 +35,7 @@ class StatusController extends Controller
     public function store(storeStatusRequest $request)
     {
         $this->status->create($request->all());
-        return redirect()->route('admin.status.index')->with('message', 'Status created successfully!');
+        return redirect()->route('admin.status-all.index')->with('message', 'Status created successfully!');
     }
 
     public function show($id)
@@ -58,7 +58,7 @@ class StatusController extends Controller
         abort_if(Gate::denies("status_edit"), Response::HTTP_FORBIDDEN, "403 Forbidden");
         $status = $this->status->findOrFail($id);
         $status->update($request->all());
-        return redirect()->route('admin.status.index')->with('message', 'Status updated successfully!');
+        return redirect()->route('admin.status-all.index')->with('message', 'Status updated successfully!');
     }
 
     public function destroy($id)
@@ -66,6 +66,6 @@ class StatusController extends Controller
         abort_if(Gate::denies("status_delete"), Response::HTTP_FORBIDDEN, "403 Forbidden");
         $status = $this->status->findOrFail($id);
         $status->delete();
-        return redirect()->route('admin.status.index')->with('message', 'Status deleted successfully!');
+        return redirect()->route('admin.status-all.index')->with('message', 'Status deleted successfully!');
     }
 }

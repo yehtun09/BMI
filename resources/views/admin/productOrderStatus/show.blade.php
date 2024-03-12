@@ -16,7 +16,7 @@
                         </tr>
                         <tr>
                             <th>{{ trans('cruds.product_order_status.fields.product_order_id') }}</th>
-                            <td>{{ $productOrderStatus->productOrder->product->name ?? '' }}</td>
+                            <td>{{ $productOrderStatus->productOrder->buyer->name ?? '' }}</td>
                         </tr>
                         <tr>
                             <th>{{ trans('cruds.product_order_status.fields.user_id') }}</th>

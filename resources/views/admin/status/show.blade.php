@@ -28,7 +28,7 @@
         </div>
 
         <div class="card-footer">
-            <a href="{{ route('admin.status.index') }}" class="btn btn-default">
+            <a href="{{ route('admin.status-all.index') }}" class="btn btn-default">
                 {{ trans('global.back_to_list') }}
             </a>
         </div>

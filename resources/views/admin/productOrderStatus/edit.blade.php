@@ -24,7 +24,7 @@
                                 name="product_order_id" id="product_order_id" required>
                                 <option value="" disabled selected>Select Product Order</option>
                                 @foreach($productOrders as $productOrder)
-                                    <option value="{{ $productOrder->id }}" {{ ($productOrderStatus->product_order_id == $productOrder->id) ? 'selected' : '' }}>{{ $productOrder->product->name ?? '' }}</option>
+                                    <option value="{{ $productOrder->id }}" {{ ($productOrderStatus->product_order_id == $productOrder->id) ? 'selected' : '' }}>{{ $productOrder->buyer->name ?? '' }}</option>
                                 @endforeach
                             </select>
                             @if($errors->has('product_order_id'))

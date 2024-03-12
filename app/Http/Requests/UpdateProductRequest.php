@@ -23,22 +23,22 @@ class UpdateProductRequest extends FormRequest
                 'required',
                 'string'
             ],
-            "price" => [
-                'required',
-                'string'
-            ],
-            "weight" => [
-                    'required',
-                    'string'
-            ],
-            "measurement_id" => [
-                'required',
-                'integer'
-            ],
-            "product_category_id" => [
-                'required',
-                'integer'
-            ]
+            // "price" => [
+            //     'required',
+            //     'string'
+            // ],
+            // "weight" => [
+            //         'required',
+            //         'string'
+            // ],
+            // "measurement_id" => [
+            //     'required',
+            //     'integer'
+            // ],
+            // "product_category_id" => [
+            //     'required',
+            //     'integer'
+            // ]
         ];
     }
 }

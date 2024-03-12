@@ -21,10 +21,12 @@
                     <thead>
                         <tr>
                             <th>{{ trans('cruds.product_order_details.fields.id') }}</th>
-                            <th>{{ trans('cruds.product_order_details.fields.buyer_id') }}</th>
-                            <th>{{ trans('cruds.product_order_details.fields.date') }}</th>
-                            <th>{{ trans('cruds.product_order_details.fields.delivery_address') }}</th>
-                            <th>{{ trans('cruds.product_order_details.fields.phone') }}</th>
+                            <th>{{ trans('cruds.product_order_details.fields.product_order_id') }}</th>
+                            <th>{{ trans('cruds.product_order_details.fields.product_id') }}</th>
+                            
+                            <th>{{ trans('cruds.product_order_details.fields.qty') }}</th>
+                            <th>{{ trans('cruds.product_order_details.fields.total_amount') }}</th>
+                            <th>{{ trans('cruds.product_order_details.fields.measurement_id') }}</th>
                             <th>{{ trans('global.action') }}</th>
                         </tr>
                     </thead>
@@ -32,20 +34,22 @@
                         @foreach ($productOrderDetails as $key => $productOrderDetail)
                             <tr>
                                 <td>{{ $productOrderDetail->id }}</td>
-                                <td>{{ $productOrderDetail->buyer_id }}</td>
-                                <td>{{ $productOrderDetail->date }}</td>
-                                <td>{{ $productOrderDetail->delivery_address }}</td>
-                                <td>{{ $productOrderDetail->phone }}</td>
+                                <td>{{ $productOrderDetail->productOrder->buyer->name }}</td>
+                                <td>{{ $productOrderDetail->product->name }}</td>
+                                <td>{{ $productOrderDetail->qty }}</td>
+                                <td>{{ $productOrderDetail->total_amount }}</td>
+                                <td>{{ $productOrderDetail->measurement->name ?? '' }}</td>
+
                                 <td>
                                     @can('product_order_details_show')
-                                        <a class="p-0 glow text-white btn btn-primary"
+                                        <a class="p-0 glow text-white btn btn-primary"  style="width: 60px;display: inline-block;line-height: 36px;color:grey;"
                                             href="{{ route('admin.product-order-details.show', $productOrderDetail->id) }}">
                                             {{ trans('global.show') }}
                                         </a>
                                     @endcan
 
                                     @can('product_order_details_edit')
-                                        <a class="p-0 glow text-white btn btn-success"
+                                        <a class="p-0 glow text-white btn btn-success"  style="width: 60px;display: inline-block;line-height: 36px;color:grey;"
                                             href="{{ route('admin.product-order-details.edit', $productOrderDetail->id) }}">
                                             {{ trans('global.edit') }}
                                         </a>
@@ -57,7 +61,7 @@
                                             method="POST" style="display: inline-block;">
                                             @method('DELETE')
                                             @csrf
-                                            <button class="p-0 glow text-white btn btn-danger"
+                                            <button class="p-0 glow text-white btn btn-danger"  style="width: 60px;display: inline-block;line-height: 36px;color:grey;"
                                                 onclick="return confirm('{{ trans('global.areYouSure') }}');">
                                                 {{ trans('global.delete') }}
                                             </button>

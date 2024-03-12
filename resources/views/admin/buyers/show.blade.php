@@ -55,6 +55,22 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.buyers.fields.shop_name') }}
+                        </th>
+                        <td>
+                            {{ $buyer->shop_name ?? '' }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.buyers.fields.shop_address') }}
+                        </th>
+                        <td>
+                            {{ $buyer->shop_address ?? '' }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.buyers.fields.password') }}
                         </th>
                         <td>

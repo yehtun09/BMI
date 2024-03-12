@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('price');
-            $table->string('weight');
-            $table->unsignedBigInteger('measurement_id');
-            $table->foreign('measurement_id')->references('id')->on('measurements')->onDelete('cascade');
-            $table->unsignedBigInteger('product_category_id');
-            $table->foreign('product_category_id')->references('id')->on('product_categories')->onDelete('cascade');
-            $table->string('image')->nullable();
+            // $table->string('price')->nullable();
+            // $table->string('weight')->nullable();
+            // $table->unsignedBigInteger('measurement_id')->nullable();
+            // $table->foreign('measurement_id')->references('id')->on('measurements')->onDelete('cascade');
+            // $table->unsignedBigInteger('product_category_id')->nullable();
+            // $table->foreign('product_category_id')->references('id')->on('product_categories')->onDelete('cascade');
+            // $table->string('image')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

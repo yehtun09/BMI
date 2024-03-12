@@ -13,24 +13,24 @@ class BuyerTableSeeder extends Seeder
         $buyer=[
             [
                 'name' => 'John Doe',
-                'password' => bcrypt('password123'),
+                'password' => '123456',
                 'address' => '123 Main Street',
-                'phone_no' => '555-1234',
+                'phone_no' => '09414231525',
                 'buyer_category' => 1,
             ],
             [
                 'name' => 'Jane Smith',
-                'password' => bcrypt('password456'),
+                'password' => '123456',
                 'address' => '456 Elm Street',
-                'phone_no' => '555-5678',
+                'phone_no' => '094452422',
                 'buyer_category' => 2,
             ],
             [
                 'name' => 'Michael Johnson',
-                'password' => bcrypt('password789'),
+                'password' => '123456',
                 'address' => '789 Oak Street',
-                'phone_no' => '555-91011',
-                'buyer_category' => null,
+                'phone_no' => '0987673',
+                'buyer_category' => 2,
             ],
         ];
 

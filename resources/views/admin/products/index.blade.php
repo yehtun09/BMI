@@ -25,11 +25,11 @@
                         <tr>
                             <th>{{ trans('cruds.product.fields.id') }}</th>
                             <th>{{ trans('cruds.product.fields.name') }}</th>
-                            <th>{{ trans('cruds.product.fields.price') }}</th>
+                            {{-- <th>{{ trans('cruds.product.fields.price') }}</th>
                             <th>{{ trans('cruds.product.fields.weight') }}</th>
                             <th>{{ trans('cruds.product.fields.measurement') }}</th>
                             <th>{{ trans('cruds.product.fields.product_category') }}</th>
-                            <th>{{ trans('cruds.product.fields.image') }}</th>
+                            <th>{{ trans('cruds.product.fields.image') }}</th> --}}
                             <th>{{ trans('global.action') }}</th>
                         </tr>
                     </thead>
@@ -38,7 +38,7 @@
                             <tr>
                                 <td>{{ $product->id ?? ''}}</td>
                                 <td>{{ $product->name ?? ''}}</td>
-                                <td>{{ $product->price ?? '' }}</td>
+                                {{-- <td>{{ $product->price ?? '' }}</td>
                                 <td>{{ $product->weight ?? '' }}</td>
                                 <td>{{ $product->measurement->name ?? '-' }}</td>
                                 <td>{{ $product->productCategory->name ?? '-'  }}</td>
@@ -48,7 +48,7 @@
                                         <img src="{{ $product->photo->getUrl('preview') }}" >
                                     </a>
                                 @endif
-                                </td>
+                                </td> --}}
                                 <td>
                                     @can('product_show')
                                         <a class="p-0 glow text-white btn btn-primary" style="width: 60px;display: inline-block;line-height: 36px;color:grey;"

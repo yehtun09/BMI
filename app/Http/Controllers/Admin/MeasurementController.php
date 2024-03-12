@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 class MeasurementController extends Controller
 {
     protected $measurements;
+    protected $product_categories;
     public function __construct( Measurement $measurements,ProductCategory $product_categories)
     {
        $this->middleware("auth");

@@ -9,7 +9,7 @@
                 <div style="margin-bottom: 10px;" class="row">
                     <div class="col-lg-12">
                         {{-- Add create button or other actions --}}
-                        <a href="{{route('admin.status.create')}}" class="btn btn-success">Status Create</a>
+                        <a href="{{route('admin.status-all.create')}}" class="btn btn-success">Status Create</a>
                     </div>
                 </div>
             @endcan
@@ -36,7 +36,7 @@
                                     @can('status_show')
                                         <a class="p-0 glow text-white btn btn-primary"
                                             style="width: 60px;display: inline-block;line-height: 36px;color:grey;"
-                                            href="{{ route('admin.status.show', $status->id) }}">
+                                            href="{{ route('admin.status-all.show', $status->id) }}">
                                             {{ trans('global.show') }}
                                         </a>
                                     @endcan
@@ -44,14 +44,14 @@
                                     @can('status_edit')
                                         <a class="p-0 glow text-white btn btn-success"
                                             style="width: 60px;display: inline-block;line-height: 36px;color:grey;"
-                                            href="{{ route('admin.status.edit', $status->id) }}">
+                                            href="{{ route('admin.status-all.edit', $status->id) }}">
                                             {{ trans('global.edit') }}
                                         </a>
                                     @endcan
 
                                     @can('status_delete')
                                         <form id="deleteForm-{{ $status->id }}"
-                                            action="{{ route('admin.status.destroy', $status->id) }}"
+                                            action="{{ route('admin.status-all.destroy', $status->id) }}"
                                             method="POST" style="display: inline-block;">
                                             @method('DELETE')
                                             @csrf

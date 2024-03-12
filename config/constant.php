@@ -1,8 +1,8 @@
 <?php 
     return [
         "buyerCategory"=> [
-            0 => "Wholesale",
-            1 => "Retail"
+            1 => "လက်လီ",
+            2 => "လက်ကား",
         ],
         "measurement_type"=>[
             1 => 'Seller',

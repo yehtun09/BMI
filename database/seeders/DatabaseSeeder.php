@@ -22,9 +22,13 @@ class DatabaseSeeder extends Seeder
             BuyerTableSeeder::class,
             MeasurementTableSeeder::class,
             ProductSeeder::class,
-            ProductOrderTableSeeder::class,
+            // ProductOrderTableSeeder::class,
             StatusSeeder::class,
-            ProductOrderStatusSeeder::class,
+            // ProductOrderStatusSeeder::class,
+            SellerProductCategoryTableSeeder::class,
+            SellerProductTypeTableSeeder::class,
+            SellerTypeTableSeeder::class,
+            ProductMeasurementTableSeeder::class,
         ]);
     }
 }

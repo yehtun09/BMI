@@ -29,7 +29,7 @@
                         </div>
                     </div>
                   
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                    {{-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="form-group">
                             <label class="required" for="price">{{ trans('cruds.product.fields.price') }}</label>
                             <input class="form-control {{ $errors->has('price') ? 'is-invalid' : ' ' }}" type="text"
@@ -106,8 +106,6 @@
                     <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 col-12">
                         <div class="form-group">
                             <label class="required" for="image">{{ trans('cruds.product.fields.image') }}</label>
-                            {{-- <input class="form-control {{ $errors->has('image') ? 'is-invalid' : ' ' }}" type="file"
-                                name="photo" id="photo" value="{{ old('image', '') }}" > --}}
                                 <div class="needsclick dropzone {{ $errors->has('photo') ? 'is-invalid' : '' }}" id="photoDropzone">
                                 </div>
                             <span class="image_error"></span>
@@ -119,7 +117,7 @@
                         
                         </div>
                     </div>
-                  
+                   --}}
 
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex">
                         <div class="form-group mt-2">

@@ -1,17 +1,6 @@
 @extends('layouts.admin')
 @section('styles')
-    <style>
-        .title_error {
-            color: red;
-            font-size: 13px;
-            font-style: italic;
-        }
-
-        .required:after {
-            content: " *";
-            color: red;
-        }
-    </style>
+   
 @endsection
 @section('content')
     <div class="card">
@@ -75,6 +64,34 @@
                             @if ($errors->has('buyer_category'))
                                 <div class="invalid-feedback">
                                     {{ $errors->first('buyer_category') }}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                            <label class="required" for="shop_name">{{ trans('cruds.buyers.fields.shop_name') }}</label>
+                            <input class="form-control {{ $errors->has('shop_name') ? 'is-invalid' : '' }}" type="text"
+                                name="shop_name" id="shop_name" value="{{ old('shop_name', $buyer->shop_name) }}" >
+                            <span class="shop_name_error"></span>
+                            @if ($errors->has('shop_name'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('shop_name') }}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="form-group">
+                            <label class="required" for="shop_address">{{ trans('cruds.buyers.fields.shop_address') }}</label>
+                            <input class="form-control {{ $errors->has('shop_address') ? 'is-invalid' : '' }}" type="text"
+                                name="shop_address" id="shop_address" value="{{ old('shop_address', $buyer->shop_address) }}" >
+                            <span class="shop_address_error"></span>
+                            @if ($errors->has('shop_address'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('shop_address') }}
                                 </div>
                             @endif
                         </div>

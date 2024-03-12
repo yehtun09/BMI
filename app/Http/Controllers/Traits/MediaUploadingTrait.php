@@ -26,7 +26,7 @@ trait MediaUploadingTrait
         }
 
         $path = storage_path('tmp/uploads');
-        // $path = storage_path('app/public/img');
+        // $path = public_path('storage');
 
         try {
             if (!file_exists($path)) {

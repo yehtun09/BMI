@@ -32,7 +32,7 @@
                         @foreach ($productOrderStatuses as $key => $productOrderStatus)
                             <tr>
                                 <td>{{ $productOrderStatus->id }}</td>
-                                <td>{{ $productOrderStatus->productOrder->product->name ?? '' }}</td>
+                                <td>{{ $productOrderStatus->productOrder->buyer->name ?? '' }}</td>
                                 <td>{{ $productOrderStatus->user->name ?? '' }}</td>
                                 <td>{{ $productOrderStatus->status->name ?? '' }}</td>
                                 <td>{{ $productOrderStatus->date ?? '' }}</td>

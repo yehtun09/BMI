@@ -21,41 +21,49 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.product_order_details.fields.buyer_id') }}
+                            {{ trans('cruds.product_order_details.fields.product_order_id') }}
                         </th>
                         <td>
-                            {{ $productOrderDetail->buyer_id }}
+                            {{ $productOrderDetail->productOrder->buyer->name }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.product_order_details.fields.date') }}
+                            {{ trans('cruds.product_order_details.fields.product_id') }}
                         </th>
                         <td>
-                            {{ $productOrderDetail->date }}
+                            {{ $productOrderDetail->product->name }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.product_order_details.fields.delivery_address') }}
+                            {{ trans('cruds.product_order_details.fields.measurement_id') }}
                         </th>
                         <td>
-                            {{ $productOrderDetail->delivery_address }}
+                            {{ $productOrderDetail->measurement->name }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.product_order_details.fields.phone') }}
+                            {{ trans('cruds.product_order_details.fields.total_amount') }}
                         </th>
                         <td>
-                            {{ $productOrderDetail->phone }}
+                            {{ $productOrderDetail->total_amount }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.product_order_details.fields.qty') }}
+                        </th>
+                        <td>
+                            {{ $productOrderDetail->qty }}
                         </td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="form-group">
-                <a class="btn btn-secondary mt-3" href="{{ route('admin.product_order_details.index') }}">
+                <a class="btn btn-secondary mt-3" href="{{ route('admin.product-order-details.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
             </div>

@@ -61,7 +61,7 @@ class ProductController extends Controller
     public function show($id)
     {
         abort_if(Gate::denies("product_show"), Response::HTTP_FORBIDDEN, "403 Forbidden");
-        $product = $this->products->findOrFail($id);
+        $product = $this->products->with('measurement','productCategory')->findOrFail($id);
         return view('admin.products.show', compact('product'));
     }
 
@@ -78,7 +78,7 @@ class ProductController extends Controller
     {
         abort_if(Gate::denies("product_edit"), Response::HTTP_FORBIDDEN, "403 Forbidden");
         $product = $this->products->findOrFail($id);
-        // $product->update($request->all());
+        $product->update($request->all());
         
         if ($request->input('photo')) {
             if (!$product->photo || $request->input('photo') !== $product->photo->file_name) {

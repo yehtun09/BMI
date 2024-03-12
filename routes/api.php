@@ -19,7 +19,8 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
         Route::post('buyers/register',"BuyerController@Register")->name('buyers.register');
         Route::post('buyers/login',"BuyerController@login")->name('buyers.login');
 
-        Route::post('products/buyers/allProducts/{id}' , "ProductController@buyerAllProduct")->name('products.allProducts');
+        Route::post('products/buyers/allProducts' , "ProductController@buyerAllProduct")->name('products.allProducts');
         Route::post('products/buyers/productOrder' , "ProductController@productOrder")->name('products.productOrder');
+        Route::post('products/buyers/order/history' , "ProductController@productOrderHistory")->name('products.order-history');
 
 });

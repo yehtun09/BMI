@@ -26,7 +26,6 @@
                             <td>{{ $post->body ?? ' ' }}</td>
                             <td>
                                 @if ($post->photo)
-                                @dd( $post->getFirstMediaUrl('photo'))
                                     <a href="{{ $post->photo->getUrl() }}" target="_blank">
                                         <img src="{{ $post->getFirstMediaUrl('photo') }}" >
                                     </a>

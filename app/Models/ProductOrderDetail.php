@@ -12,12 +12,15 @@ class ProductOrderDetail extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'product_order_details';
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
     protected $fillable = [
-        'buyer_id',
-        'date',
-        'delivery_address',
+        'product_id',
+        'product_order_id',
+        'qty',
+        'total_amount',
         'phone',
+        'measurement_id',
     ];
 
     protected $dates = [
@@ -26,4 +29,18 @@ class ProductOrderDetail extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function productOrder(){
+        return $this->belongsTo(ProductOrder::class);
+    }
+
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
+
+    public function measurement()
+    {
+        return $this->belongsTo(Measurement::class);
+    }
+
 }

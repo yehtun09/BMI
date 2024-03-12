@@ -16,7 +16,7 @@ class BuyerController extends Controller
     {
         $validator = Validator::make($request->all(),[
             'name' => 'required',
-            'phone_no' => 'required',
+            'phone_no' =>  ['required', 'unique:buyers,phone_no'],
             'password' => 'required|min:6',
             "address"  => 'required',
             "buyer_category" => "required"
@@ -31,7 +31,7 @@ class BuyerController extends Controller
                 'data'=>[]
             ],400); // 400 message is required
         }
-
+        
         $buyers = Buyer::create($request->all());
         // $jwt_token = JWTAuth::fromUser($buyers)
         return  response()->json([

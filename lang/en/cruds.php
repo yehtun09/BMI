@@ -106,7 +106,9 @@ return [
             'phone_no'          => 'Phone Number',
             'buyer_category'    => 'Buyer Category',
             'trash'             => 'Trash Bin',
-            'export_excel'      => 'Export Excel'
+            'export_excel'      => 'Export Excel',
+            'shop_name'         => 'Shop Name',
+            'shop_address'      => 'Shop Address',
         ]
     ],
     'product_category' => [
@@ -162,32 +164,33 @@ return [
             'delivery_address' => 'Delivery Address',
             'phone_no' => 'Phone No',
             'trash'             => 'Trash Bin',
+            'status'             => 'Status',
         ]
     ],
     'product_order_status' => [
-            'title' => 'Product Order Status',
-            'title_singular' => 'Product Order Status',
-            'trash_title' => 'Delete Product Order Status',
-            'fields' => [
-                'id'                => 'ID',
-                'product_order_id'  => 'Product Order',
-                'user_id'           => 'User',
-                'status_id'         => 'Status',
-                'date'              => 'Date',
-                'trash'             => 'Trash Bin',
-                
-            ],
+        'title' => 'Product Order Status',
+        'title_singular' => 'Product Order Status',
+        'trash_title' => 'Delete Product Order Status',
+        'fields' => [
+            'id'                => 'ID',
+            'product_order_id'  => 'Product Order',
+            'user_id'           => 'User',
+            'status_id'         => 'Status',
+            'date'              => 'Date',
+            'trash'             => 'Trash Bin',
+
+        ],
     ],
     'status' => [
-            'title' => 'Status',
-            'title_singular' => 'Status',
-            'trash_title' => 'Delete Status',
-            'fields' => [
-                'id'                => 'ID',
-                'name'              => 'Status',
-                'type'              => 'Status Type',
-                
-            ],
+        'title' => 'Status',
+        'title_singular' => 'Status',
+        'trash_title' => 'Delete Status',
+        'fields' => [
+            'id'                => 'ID',
+            'name'              => 'Status',
+            'type'              => 'Status Type',
+
+        ],
     ],
     'product_order_details' => [
         'title' => 'Product Order Details',
@@ -197,9 +200,112 @@ return [
             'id'                => 'ID',
             'buyer_id'          => 'Buyer',
             'date'              => 'Date',
+            'product_id' => 'Product',
+            'measurement_id'        => 'Measurement',
+            'product_order_id'  => 'Product Order',
             'delivery_address'  => 'Delivery Address',
             'phone'             => 'Phone',
             'trash'             => 'Trash Bin',
+            'total_amount' => 'Total Amount',
+            'order_date' => 'Order Date',
+            'qty' => 'Qty',
+        ],
+    ],
+    'SellerProductCategory' => [
+        'title'             => 'SellerProductCategory',
+        'title_singular'    => 'SellerProductCategory',
+        'trash_title'       => 'Delete Product Order Status',
+        'fields'        => [
+            'id'            => 'ID',
+            'name'          => 'Name'
+        ]
+
+    ],
+    'seller_product_type' => [
+        'title'             => 'Seller Product Type',
+        'title_singular'    => 'Seller Product Type',
+        'trash_title'       => 'Delete Product Order Status',
+        'fields'        => [
+            'no' => 'No',
+            'id'            => 'ID',
+            'name'          => 'Name',
+            'seller_product_category' => 'Seller Product Category',
+        ]
+    ],
+    'seller' => [
+        'title' => 'Seller',
+        'title_singular' => 'Seller',
+        'trash_title' => 'Delete Seller',
+        'fields' => [
+            'no' => 'No',
+            'id' => 'ID',
+            'name' => 'Name',
+            'phone_no' => 'Phone Number',
+            'password' => 'Password',
+            'address' => 'Address',
+            'seller_type_id' => 'Seller Type',
+            'trash'             => 'Trash Bin',
+        ]
+    ],
+    'sellerType' => [
+        'title'          => 'Seller Type',
+        'title_singular' => 'Seller Type',
+        'trash_title'    => 'Delete Seller Type',
+        'fields'         => [
+            'no'                   => 'No',
+            'id'                   => 'ID',
+            'name'                 => 'Name',
+            'created_at'           => 'Created At',
+            'updated_at'           => 'Updated At',
+            'deleted_at'           => 'Deleted At',
+        ],
+    ],    
+    'sellerProduct' => [
+        'title'          => 'Seller Product',
+        'title_singular' => 'Seller Product',
+        'trash_title'    => 'Delete Seller Product',
+        'fields'         => [
+            'no'                   => 'No',
+            'id'                   => 'ID',
+            'seller_product_type_id' => 'Seller Product Type',
+            'order_date'           => 'Order Date',
+            'rice_percentage_one'  => 'Rice Percentage One',
+            'rice_percentage_two'  => 'Rice Percentage Two',
+            'weight'               => 'Weight',
+            'measurement_id'       => 'Measurement',
+            'total_amt'            => 'Total Amount',
+            'price'                => 'Price',
+            'address'              => 'Address',
+            'photo'                => 'Photo',
+        ],
+    ],
+    'sellerUserStatus' => [
+        'title'          => 'Seller User Status',
+        'title_singular' => 'Seller User Status',
+        'trash_title'    => 'Delete Seller User Status',
+        'fields'         => [
+            'no'              => 'No',
+            'id'              => 'ID',
+            'seller_product_id' => 'Seller Product',
+            'user_id'         => 'User',
+            'status_id'       => 'Status',
+            'date'            => 'Date',
+            'enabled'         => 'Enabled',
+        ],
+    ],
+    'productMeasurement' => [
+        'title'          => 'Product Measurements',
+        'title_singular' => 'Product Measurement',
+        'trash_title'    => 'Delete Product Measurement',
+        'fields'         => [
+            'no'                    => 'No',
+            'id'                    => 'ID',
+            'product_id'            => 'Product',
+            'measurement_id'        => 'Measurement',
+            'price'                 => 'Price',
+            'weight'                => 'Weight',
+            'product_category_id'   => 'Product Category',
+            'image'                 => 'Photo',
         ],
     ],
 ];

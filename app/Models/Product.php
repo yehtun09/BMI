@@ -16,6 +16,7 @@ class Product extends Model implements HasMedia
     use InteractsWithMedia;
     protected $appends = ['photo'];
     public $table = 'products';
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
     protected $dates = [
         'created_at',
@@ -60,5 +61,10 @@ class Product extends Model implements HasMedia
     public function productCategory()
     {
         return $this->belongsTo(ProductCategory::class);
+    }
+
+    public function productMeasurement()
+    {
+        return $this->hasOne(ProductMeasurement::class,'product_id');
     }
 }

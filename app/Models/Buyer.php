@@ -32,6 +32,8 @@ class Buyer extends Model implements JWTSubject
         'address',
         'phone_no',
         'buyer_category',
+        'shop_name',
+        'shop_address',
         'created_at',
         'updated_at',
         'deleted_at',
