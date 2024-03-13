@@ -37,6 +37,7 @@ class LoginController extends Controller
             event(new LogoutEvent($user->id, Session::get('loginId')));
         }
 
+        
         $this->guard()->logout();
         $request->session()->invalidate();
 
