@@ -259,7 +259,7 @@ return [
             'updated_at'           => 'Updated At',
             'deleted_at'           => 'Deleted At',
         ],
-    ],    
+    ],
     'sellerProduct' => [
         'title'          => 'Seller Product',
         'title_singular' => 'Seller Product',
@@ -306,6 +306,19 @@ return [
             'weight'                => 'Weight',
             'product_category_id'   => 'Product Category',
             'image'                 => 'Photo',
+        ],
+    ],
+    'product_category_prices' => [
+        'title'          => 'Product Category Prices',
+        'title_singular' => 'Product Category Prices',
+        'fields'    => [
+            'id'                => 'Id',
+            'no'                => 'No',
+            'name'              => 'Name',
+            'price'             => 'Price',
+            'type'              => 'Type',
+            'product_category' => 'Product Category',
+            'trash'             => 'Trash Bin',
         ],
     ],
 ];

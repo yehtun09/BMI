@@ -401,6 +401,26 @@ class PermissionTableSeeder extends Seeder
                 'id'    => 96,
                 'title' => 'product_measurement_edit',
             ],
+            [
+                'id' => 97,
+                'title' => 'product_category_prices_access',
+            ],
+            [
+                'id' => 98,
+                'title' => 'product_category_prices_edit',
+            ],
+            [
+                'id' => 99,
+                'title' => 'product_category_prices_show',
+            ],
+            [
+                'id' => 100,
+                'title' => 'product_category_prices_delete',
+            ],
+            [
+                'id' => 101,
+                'title' => 'product_category_prices_create',
+            ],
         ];
 
         Permission::insert($permissions);

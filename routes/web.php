@@ -56,7 +56,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('export/audit_logs', 'AuditLogsController@exportCsv')->name('audit_logs.export');
     Route::resource('audit_logs', 'AuditLogsController');
 
-    // Buyer 
+    // Buyer
     Route::get('buyers/showTrash', 'BuyerController@showTrash')->name('buyers.showTrash');
     Route::get('buyers/restore/trash/{id}','BuyerController@restoreTrash')->name('buyers.restore.trash');
     Route::delete('buyers/trashDelete/{id}','BuyerController@trashDelete')->name('buyers.trashDelete');
@@ -80,7 +80,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('product-order/trashDelete/{id}','ProductOrderController@trashDelete')->name('product-order.trashDelete');
     Route::resource('product-order', 'ProductOrderController');
 
-    // Product 
+    // Product
     Route::get('product/showTrash', 'ProductController@showTrash')->name('product.showTrash');
     Route::get('product/restore/trash/{id}','ProductController@restoreTrash')->name('product.restore.trash');
     Route::delete('product/trashDelete/{id}','ProductController@trashDelete')->name('product.trashDelete');
@@ -106,11 +106,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('seller-type/restore/trash/{id}','SellerTypeController@restoreTrash')->name('seller-type.restore.trash');
     Route::delete('seller-type/trashDelete/{id}','SellerTypeController@trashDelete')->name('seller-type.trashDelete');
     Route::resource('seller-type','SellerTypeController');
-      
+
     // Seller Product Category
     Route::resource('sellers-product-categories','SellerProductCategoryController');
 
-    // Seller Product Types 
+    // Seller Product Types
     Route::resource('seller-product-type','SellerProductTypeController');
 
     // SellerProduct
@@ -118,8 +118,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('seller-product/{id}/restore', 'SellerProductController@restoreTrash')->name('seller-product.restore');
     Route::delete('seller-product/{id}/trash-delete', 'SellerProductController@trashDelete')->name('seller-product.trashDelete');
     Route::resource('seller-product', 'SellerProductController');
-    
-    
+
+
     // Seller
     Route::delete('seller/destroy', 'SellerController@massDestroy')->name('seller.massDestroy');
     Route::get('seller/showTrash', 'SellerController@showTrash')->name('seller.showTrash');
@@ -127,7 +127,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('seller/trashDelete/{id}','SellerController@trashDelete')->name('seller.trashDelete');
     Route::resource('seller','SellerController');
 
-    // Seller User Status 
+    // Seller User Status
     Route::get('seller-user-statuses/trash','SellerUserStatusController@showTrash')->name('seller-user-statuses.trash');
     Route::get('seller-user-statuses/restore/{id}','SellerUserStatusController@restoreTrash')->name('seller-user-statuses.restore');
     Route::delete('seller-user-statuses/trash-delete/{id}','SellerUserStatusController@trashDelete')->name('seller-user-statuses.trashDelete');
@@ -149,4 +149,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
+
+    // CategoryPrices
+    Route::get('product-category-prices/showTrash', 'ProductCategoryPricesController@showTrash')->name('product-category-prices.showTrash');
+    Route::get('product-category-prices/restore/trash/{id}','ProductCategoryPricesController@restoreTrash')->name('product-category-prices.restore.trash');
+    Route::delete('product-category-prices/trashDelete/{id}','ProductCategoryPricesController@trashDelete')->name('product-category-prices.trashDelete');
+    Route::resource('product-category-prices', 'ProductCategoryPricesController');
 });
