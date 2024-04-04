@@ -155,4 +155,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('product-category-prices/restore/trash/{id}','ProductCategoryPricesController@restoreTrash')->name('product-category-prices.restore.trash');
     Route::delete('product-category-prices/trashDelete/{id}','ProductCategoryPricesController@trashDelete')->name('product-category-prices.trashDelete');
     Route::resource('product-category-prices', 'ProductCategoryPricesController');
+
+    // TodayPrice
+    Route::get('today-price/showTrash', 'TodayPriceController@showTrash')->name('today-price.showTrash');
+    Route::get('today-price/restore/trash/{id}','TodayPriceController@restoreTrash')->name('today-price.restore.trash');
+    Route::delete('today-price/trashDelete/{id}','TodayPriceController@trashDelete')->name('today-price.trashDelete');
+    Route::resource('today-price', 'TodayPriceController');
 });

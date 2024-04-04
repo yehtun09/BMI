@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
             SellerProductTypeTableSeeder::class,
             SellerTypeTableSeeder::class,
             ProductMeasurementTableSeeder::class,
-            ProductCategoryPricesTableSeeder::class
+            ProductCategoryPricesTableSeeder::class,
+            TodayPricesTableSeeder::class,
         ]);
     }
 }

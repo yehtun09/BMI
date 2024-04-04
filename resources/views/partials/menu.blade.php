@@ -240,6 +240,12 @@
                             </li>
                         @endcan
 
+                        @can('today_price_access')
+                            <li class="nav-item {{ Request::is('admin/today-price*') ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('admin.today-price.index') }}">Today Price</a>
+                            </li>
+                        @endcan
+
                     </ul>
 
                 </div>

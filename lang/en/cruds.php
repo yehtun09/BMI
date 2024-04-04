@@ -310,7 +310,7 @@ return [
     ],
     'product_category_prices' => [
         'title'          => 'Product Category Prices',
-        'title_singular' => 'Product Category Prices',
+        'title_singular' => 'Product Category Price',
         'fields'    => [
             'id'                => 'Id',
             'no'                => 'No',
@@ -318,6 +318,21 @@ return [
             'price'             => 'Price',
             'type'              => 'Type',
             'product_category' => 'Product Category',
+            'trash'             => 'Trash Bin',
+        ],
+    ],
+    'today_price' => [
+        'title'          => 'Today Prices',
+        'title_singular' => 'Today Price',
+        'fields'    => [
+            'id'                => 'Id',
+            'no'                => 'No',
+            'date'              => 'Date',
+            'sell_price'        => 'Sell Price',
+            'buy_price'         => 'Buy Price',
+            'rice'              => 'Rice',
+            'type'              => 'Type',
+            'remark'            => 'Remark',
             'trash'             => 'Trash Bin',
         ],
     ],
