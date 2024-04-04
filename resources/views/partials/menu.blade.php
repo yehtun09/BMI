@@ -106,7 +106,7 @@
             <li
                 class="nav-item {{ Request::is('admin/buyers*') ? 'active' : '' }} {{ Request::is('admin/product-category*') ? 'active' : '' }}
             {{ Request::is('admin/products*') ? 'active' : '' }} {{ Request::is('admin/product-order*') ? 'active' : '' }}
-            {{ Request::is('admin/product-order*') ? 'active' : '' }} {{ Request::is('admin/product-order-details*') ? 'active' : '' }}  {{ Request::is('admin/product-order-status*') ? 'active' : '' }} {{Request::is('admin/product-measurements*') ? 'active' : '' }}  ">
+            {{ Request::is('admin/product-order*') ? 'active' : '' }} {{ Request::is('admin/product-order-details*') ? 'active' : '' }}  {{ Request::is('admin/product-order-status*') ? 'active' : '' }} {{ Request::is('admin/product-measurements*') ? 'active' : '' }}  ">
                 <a class="nav-link" data-toggle="collapse" href="#buyer" aria-expanded="false" aria-controls="buyer">
                     <i class="icon-layout menu-icon"></i>
                     <span class="menu-title">Buyer Management</span>
@@ -187,57 +187,63 @@
 
         {{-- Seller Management --}}
         @can('seller_management_access')
-           <li class="nav-item {{ Request::is('admin/sellers*') ? 'active' : '' }} {{ Request::is('admin/seller-product-type*') ? 'active' : '' }} {{ Request::is('admin/seller-type*') ? 'active' : '' }} {{ Request::is('admin/seller-user-statuses*') ? 'active' : '' }}
+            <li
+                class="nav-item {{ Request::is('admin/sellers*') ? 'active' : '' }} {{ Request::is('admin/seller-product-type*') ? 'active' : '' }} {{ Request::is('admin/seller-type*') ? 'active' : '' }} {{ Request::is('admin/seller-user-statuses*') ? 'active' : '' }}
            {{ Request::is('admin/seller*') ? 'active' : '' }}  {{ Request::is('admin/seller-product.s*') ? 'active' : '' }}">
-               <a class="nav-link" data-toggle="collapse" href="#sellers" aria-expanded="false" aria-controls="buyer">
-                   <i class="icon-layout menu-icon mdi mdi-sale" ></i>
-                   <span class="menu-title">Seller Management</span>
-                   <i class="menu-arrow"></i>
-               </a>
+                <a class="nav-link" data-toggle="collapse" href="#sellers" aria-expanded="false" aria-controls="buyer">
+                    <i class="icon-layout menu-icon mdi mdi-sale"></i>
+                    <span class="menu-title">Seller Management</span>
+                    <i class="menu-arrow"></i>
+                </a>
 
-               <div class="collapse {{ Request::is('admin/sellers*') ? 'show' : '' }} {{ Request::is('admin/seller-product-type*') ? 'show' : '' }} {{ Request::is('admin/seller-type*') ? 'show' : '' }} {{ Request::is('admin/seller-user-statuses*') ? 'show' : '' }}
-               {{ Request::is('admin/seller*') ? 'show' : '' }} {{ Request::is('admin/seller-product.s*') ? 'show' : '' }}"  id="sellers">
-                   <ul class="nav flex-column sub-menu">
-                    @can('seller_type_access')
+                <div class="collapse {{ Request::is('admin/sellers*') ? 'show' : '' }} {{ Request::is('admin/seller-product-type*') ? 'show' : '' }} {{ Request::is('admin/seller-type*') ? 'show' : '' }} {{ Request::is('admin/seller-user-statuses*') ? 'show' : '' }}
+               {{ Request::is('admin/seller*') ? 'show' : '' }} {{ Request::is('admin/seller-product.s*') ? 'show' : '' }}"
+                    id="sellers">
+                    <ul class="nav flex-column sub-menu">
+                        @can('seller_type_access')
                             <li class="nav-item {{ Request::is('admin/seller-type*') ? 'active' : '' }}">
                                 <a class="nav-link" href="{{ route('admin.seller-type.index') }}">Seller Type</a>
                             </li>
                         @endcan
-                       @can('permission_access')
-                           <li class="nav-item {{ Request::is('admin/sellers-product-categories*') ? 'active' : '' }}">
-                               <a class="nav-link" href="{{ route('admin.sellers-product-categories.index') }}">Product Category</a>
-                           </li>
-                       @endcan
+                        @can('permission_access')
+                            <li class="nav-item {{ Request::is('admin/sellers-product-categories*') ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('admin.sellers-product-categories.index') }}">Product
+                                    Category</a>
+                            </li>
+                        @endcan
 
-                       @can('seller_product_type_access')
-                           <li class="nav-item {{ Request::is('admin/seller-product-type*') ? 'active' : '' }}">
-                               <a class="nav-link" href="{{ route('admin.seller-product-type.index') }}">Product Type</a>
-                           </li>
-                       @endcan
+                        @can('seller_product_type_access')
+                            <li class="nav-item {{ Request::is('admin/seller-product-type*') ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('admin.seller-product-type.index') }}">Product Type</a>
+                            </li>
+                        @endcan
 
-                       @can('seller_product_access')
-                           <li class="nav-item {{ Request::is('admin/seller-product') ? 'active' : '' }} {{ Request::is('admin/seller-product/*') ? 'active' : '' }}">
-                               <a class="nav-link" href="{{ route('admin.seller-product.index') }}">Seller Product</a>
-                           </li>
-                       @endcan
+                        @can('seller_product_access')
+                            <li
+                                class="nav-item {{ Request::is('admin/seller-product') ? 'active' : '' }} {{ Request::is('admin/seller-product/*') ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('admin.seller-product.index') }}">Seller Product</a>
+                            </li>
+                        @endcan
 
                         {{-- Seller --}}
-                       @can('seller_access')
-                           <li class="nav-item {{ Request::is('admin/seller/*') ? 'active' : '' }} {{ Request::is('admin/seller') ? 'active' : '' }}">
-                               <a class="nav-link" href="{{ route('admin.seller.index') }}">Seller</a>
-                           </li>
-                       @endcan
+                        @can('seller_access')
+                            <li
+                                class="nav-item {{ Request::is('admin/seller/*') ? 'active' : '' }} {{ Request::is('admin/seller') ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('admin.seller.index') }}">Seller</a>
+                            </li>
+                        @endcan
 
-                       @can('seller_user_status_access')
-                           <li class="nav-item {{ Request::is('admin/seller-user-statuses*') ? 'active' : '' }}">
-                               <a class="nav-link" href="{{ route('admin.seller-user-statuses.index') }}">Seller User Status</a>
-                           </li>
-                       @endcan
+                        @can('seller_user_status_access')
+                            <li class="nav-item {{ Request::is('admin/seller-user-statuses*') ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('admin.seller-user-statuses.index') }}">Seller User
+                                    Status</a>
+                            </li>
+                        @endcan
 
-                   </ul>
+                    </ul>
 
-               </div>
-           </li>
+                </div>
+            </li>
         @endcan
 
         {{-- Measurement --}}
@@ -262,15 +268,23 @@
             </li>
         @endcan
 
-
+        {{-- ProductCategoryPrices --}}
+        @can('product_category_prices_access')
+            <li class="nav-item {{ Request::is('admin/product-category-prices') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.product-category-prices.index') }}">
+                    <i class="icon-paper menu-icon"></i>
+                    <span class="menu-title">Product Category Prices</span>
+                </a>
+            </li>
+        @endcan
 
         {{-- Post --}}
-        <li class="nav-item {{ Request::is('admin/posts*') ? 'active' : '' }}">
+        {{-- <li class="nav-item {{ Request::is('admin/posts*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.posts.index') }}">
                 <i class="icon-paper menu-icon"></i>
                 <span class="menu-title">Posts</span>
             </a>
-        </li>
+        </li> --}}
         <li class="nav-item {{ Request::is('admin/system-calendar*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.systemCalendar') }}">
                 <i class="mdi mdi-calendar menu-icon"></i>
@@ -278,15 +292,7 @@
             </a>
         </li>
 
-        {{-- ProductCategoryPrices --}}
-        @can('product_category_prices_access')
-        <li class="nav-item {{ Request::is('admin/product-category-prices') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('admin.product-category-prices.index') }}">
-                <i class="icon-paper menu-icon"></i>
-                <span class="menu-title">Product Category Prices</span>
-            </a>
-        </li>
-    @endcan
+
     </ul>
 </nav>
 
