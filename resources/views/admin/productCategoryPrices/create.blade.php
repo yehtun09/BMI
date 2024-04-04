@@ -36,6 +36,8 @@
                                 </div>
                             @endif
                         </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                             <div class="form-group">
                                 <label class="required" for="product_category_id">{{ trans('cruds.product_category_prices.fields.product_category') }}</label>
                                 {{-- <input class="form-control {{ $errors->has('product_category_id') ? 'is-invalid' : ' ' }}" type="text"
@@ -53,6 +55,7 @@
                                     </div>
                                 @endif
                             </div>
+                        </div>
 
 
 

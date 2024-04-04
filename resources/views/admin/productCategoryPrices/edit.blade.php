@@ -36,6 +36,8 @@
                                 </div>
                             @endif
                         </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="form-group">
                             <label class="required" for="product_category_id">{{ trans('cruds.product.fields.product_category') }}</label>
                                 <select class="select2 mb-3" aria-label=".form-select-lg example" name="product_category_id" id="product_category_id">
