@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class productCategoryPrices extends Model
+class ProductCategoryPrices extends Model
 {
     use SoftDeletes;
     use HasFactory;

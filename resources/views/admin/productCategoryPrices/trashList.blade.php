@@ -20,7 +20,9 @@
                             <th>
                                 {{ trans('cruds.product_category_prices.fields.name') }}
                             </th>
-
+                            <th>
+                                {{ trans('cruds.product_category_prices.fields.product_category') }}
+                            </th>
                             <th>
                                 {{ trans('global.action') }}
                             </th>
@@ -35,7 +37,9 @@
                                 <td>
                                     {{ $product_category_prices->name ?? '' }}
                                 </td>
-
+                                <td>
+                                    {{ $product_category_prices->productCategory->name ?? '' }}
+                                </td>
                                 <td>
 
                                     @can('product_category_prices_show')

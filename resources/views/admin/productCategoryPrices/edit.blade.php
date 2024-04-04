@@ -2,9 +2,7 @@
 @section('styles')
     <style>
         .name_error,
-        .email_error,
-        .password_error,
-        .role_error {
+        .product_category_id_error {
             color: red;
             font-size: 13px;
             font-style: italic;
@@ -40,9 +38,7 @@
                         </div>
                         <div class="form-group">
                             <label class="required" for="product_category_id">{{ trans('cruds.product.fields.product_category') }}</label>
-                            {{-- <input class="form-control {{ $errors->has('product_category_id') ? 'is-invalid' : ' ' }}" type="text"
-                                name="product_category_id" id="product_category_id" value="{{ old('product_category_id', '') }}" > --}}
-                                <select class="select2 mb-3" aria-label="form-select-lg example" name="product_category_id" id="product_category_id">
+                                <select class="select2 mb-3" aria-label=".form-select-lg example" name="product_category_id" id="product_category_id">
                                     <option selected value="">Open this select menu</option>
                                     @foreach ($productCategories as $key => $ProductCategory)
                                         <option  value="{{ $key }}" @if ($key == $product_category_prices->product_category_id)
@@ -77,7 +73,7 @@
         </div>
     </div>
 @endsection
-{{-- @section('scripts')
+@section('scripts')
     <script>
         $('#save').on('click', function(e) {
             e.preventDefault();
@@ -86,9 +82,7 @@
 
         var formValidation = () => {
             let name = $('#name').val();
-            let email = $('#email').val();
-            let password = $('#password').val();
-            let role = $('#roles').find(':selected').val();
+            let product_category_id = $('#product_category_id').val();
             let arr = [];
             if (name == '') {
                 $('.name_error').html('Name must be filled');
@@ -100,23 +94,13 @@
                 }
             }
 
-            if (email == '') {
-                $('.email_error').html('Email must be filled');
-                arr.push('email');
+            if (product_category_id == '') {
+                $('.product_category_id_error').html('Product Category Id must be filled');
+                arr.push('product_category_id');
             } else {
-                $('.email_error').html('');
-                if (arr.includes("email")) {
-                    arr.splice(arr.indexOf('email'), 1);
-                }
-            }
-
-            if (password == '') {
-                $('.password_error').html('Password must be filled');
-                arr.push('password');
-            } else {
-                $('.password_error').html('');
-                if (arr.includes("password")) {
-                    arr.splice(arr.indexOf('password'), 1);
+                $('.product_category_id_error').html('');
+                if (arr.includes("product_category_id")) {
+                    arr.splice(arr.indexOf('product_category_id'), 1);
                 }
             }
 
@@ -125,4 +109,4 @@
             }
         }
     </script>
-@endsection --}}
+@endsection

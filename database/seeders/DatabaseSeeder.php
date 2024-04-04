@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    
+
     public function run()
     {
         // \App\Models\User::factory(10)->create();
@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             SellerProductTypeTableSeeder::class,
             SellerTypeTableSeeder::class,
             ProductMeasurementTableSeeder::class,
+            ProductCategoryPricesTableSeeder::class
         ]);
     }
 }
