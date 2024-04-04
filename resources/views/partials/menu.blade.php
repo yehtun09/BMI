@@ -283,7 +283,7 @@
         <li class="nav-item {{ Request::is('admin/product-category-prices') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.product-category-prices.index') }}">
                 <i class="icon-paper menu-icon"></i>
-                <span class="">Product Category Prices</span>
+                <span class="menu-title">Product Category Prices</span>
             </a>
         </li>
     @endcan
