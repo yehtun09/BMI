@@ -10,6 +10,9 @@
                         <a class="btn btn-success" href="{{ route('admin.seller-product-type.create') }}">
                             {{ trans('global.add') }} {{ trans('cruds.seller_product_type.title_singular') }}
                         </a>
+                        <a class="btn btn-primary" href="{{ route('admin.seller-product-type.showTrash') }}">
+                            {{ trans('cruds.seller_product_type.fields.trash') }}
+                        </a>
                     </div>
                 </div>
             @endcan
@@ -27,7 +30,7 @@
                     <th>
                         {{ trans('cruds.seller_product_type.fields.seller_product_category') }}
                     </th>
-                   
+
                     <th>
                         Action
                     </th>
@@ -38,7 +41,7 @@
                         <tr data-id="{{ $key }}">
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $seller_product_type->name ?? '' }}</td>
-                            
+
                             <td>{{ $seller_product_type->sellerProductCategory->name ?? '' }}</td>
                             <td>
                                 @can('seller_product_type_show')

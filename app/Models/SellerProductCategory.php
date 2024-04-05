@@ -11,7 +11,7 @@ class SellerProductCategory extends Model
     use SoftDeletes;
     use HasFactory;
 
-    public $table = 'seller_product_categories';
+    protected $table = 'seller_product_categories';
 
     protected $dates = [
         'created_at',

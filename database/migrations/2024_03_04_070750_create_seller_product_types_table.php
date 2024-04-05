@@ -14,6 +14,7 @@ return new class extends Migration
             $table->unsignedBigInteger('product_category_id');
             $table->foreign('product_category_id')->references('id')->on('seller_product_categories')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -9,6 +9,9 @@
                         <a class="btn btn-success" href="{{ route('admin.sellers-product-categories.create') }}">
                             {{ trans('global.add') }} {{ trans('cruds.SellerProductCategory.title_singular') }}
                         </a>
+                        <a class="btn btn-primary" href="{{ route('admin.sellers-product-categories.showTrash') }}">
+                            {{ trans('cruds.SellerProductCategory.fields.trash') }}
+                        </a>
                     </div>
                 </div>
             @endcan
@@ -54,7 +57,7 @@
                                     @can('role_delete')
                                         <form id="orderDelete-{{$productCategory->id }}"
                                             action="{{ route('admin.sellers-product-categories.destroy',$productCategory->id) }}" method="POST"
-                                           
+
                                             style="display: inline-block;">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">

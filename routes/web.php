@@ -108,9 +108,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('seller-type','SellerTypeController');
 
     // Seller Product Category
+    Route::get('sellers-product-categories/showTrash', 'SellerProductCategoryController@showTrash')->name('sellers-product-categories.showTrash');
+    Route::get('sellers-product-categories/restore/trash/{id}','SellerProductCategoryController@restoreTrash')->name('sellers-product-categories.restore.trash');
+    Route::delete('sellers-product-categories/trashDelete/{id}','SellerProductCategoryController@trashDelete')->name('sellers-product-categories.trashDelete');
     Route::resource('sellers-product-categories','SellerProductCategoryController');
 
     // Seller Product Types
+    Route::get('seller-product-type/showTrash', 'SellerProductTypeController@showTrash')->name('seller-product-type.showTrash');
+    Route::get('seller-product-type/restore/trash/{id}','SellerProductTypeController@restoreTrash')->name('seller-product-type.restore.trash');
+    Route::delete('seller-product-type/trashDelete/{id}','SellerProductTypeController@trashDelete')->name('seller-product-type.trashDelete');
     Route::resource('seller-product-type','SellerProductTypeController');
 
     // SellerProduct

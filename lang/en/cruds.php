@@ -217,7 +217,8 @@ return [
         'trash_title'       => 'Delete Product Order Status',
         'fields'        => [
             'id'            => 'ID',
-            'name'          => 'Name'
+            'name'          => 'Name',
+            'trash'         => 'Trash Bin',
         ]
 
     ],
@@ -229,6 +230,7 @@ return [
             'no' => 'No',
             'id'            => 'ID',
             'name'          => 'Name',
+            'trash'         => 'Trash Bin',
             'seller_product_category' => 'Seller Product Category',
         ]
     ],
