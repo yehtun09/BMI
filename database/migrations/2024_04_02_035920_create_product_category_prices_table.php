@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('product_category_prices', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_category_id');
-            $table->foreign('product_category_id')->references('id')->on('product_categories')->onDelete('cascade');
+            $table->foreign('product_category_id')->references('id')->on('seller_product_categories')->onDelete('cascade');
             $table->string('name');
             $table->timestamps();
             $table->softDeletes();

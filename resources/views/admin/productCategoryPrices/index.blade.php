@@ -39,23 +39,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($product_category_prices as $key => $product_category_prices)
+                        @foreach ($product_category_prices as $key => $product_category_price)
                             <tr>
                                 <td>
                                     {{ $loop->iteration }}
                                 </td>
                                 <td>
-                                    {{ $product_category_prices->name ?? '' }}
+                                    {{ $product_category_price->name ?? '' }}
                                 </td>
                                 <td>
-                                    {{ $product_category_prices->productCategory->name ?? '' }}
+                                    {{ $product_category_price->sellerProductCategory->name ?? '' }}
                                 </td>
                                 <td>
                                     @can('product_category_prices_show')
                                         <a class="p-0 glow text-white btn btn-primary"
                                             style="width: 60px;display: inline-block;line-height: 36px;color:grey;"
                                             title="view"
-                                            href="{{ route('admin.product-category-prices.show', $product_category_prices->id) }}">
+                                            href="{{ route('admin.product-category-prices.show', $product_category_price->id) }}">
                                             Show
                                         </a>
                                     @endcan
@@ -64,14 +64,14 @@
                                         <a class="p-0 glow text-white btn btn-success"
                                             style="width: 60px;display: inline-block;line-height: 36px;color:grey;"
                                             title="edit"
-                                            href="{{ route('admin.product-category-prices.edit', $product_category_prices->id) }}">
+                                            href="{{ route('admin.product-category-prices.edit', $product_category_price->id) }}">
                                             Edit
                                         </a>
                                     @endcan
 
                                     @can('product_category_prices_delete')
-                                        <form id="orderDelete-{{ $product_category_prices->id }}"
-                                            action="{{ route('admin.product-category-prices.destroy', $product_category_prices->id) }}"
+                                        <form id="orderDelete-{{ $product_category_price->id }}"
+                                            action="{{ route('admin.product-category-prices.destroy', $product_category_price->id) }}"
                                             method="POST" style="display: inline-block;">
                                             <input type="hidden" name="_method" value="DELETE">
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -12,9 +12,23 @@ class ProductCategoryPrices extends Model
     use SoftDeletes;
     use HasFactory;
 
-    protected $fillable=['name','product_category_id'];
+    protected $table='product_category_prices';
 
-    public function productCategory(){
-        return $this->belongsTo(ProductCategory::class);
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
+
+    protected $fillable = [
+        'name',
+        'product_category_id',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
+
+    public function SellerProductCategory(){
+        return $this->belongsTo(SellerProductCategory::class, 'product_category_id');
     }
 }

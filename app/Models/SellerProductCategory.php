@@ -11,8 +11,6 @@ class SellerProductCategory extends Model
     use SoftDeletes;
     use HasFactory;
 
-    protected $table = 'seller_product_categories';
-
     protected $dates = [
         'created_at',
         'updated_at',
@@ -25,4 +23,8 @@ class SellerProductCategory extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function ProductCategoryPrices() {
+        return $this->hasMany(ProductCategoryPrices::class, 'product_category_id');
+    }
 }

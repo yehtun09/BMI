@@ -33,7 +33,7 @@
                             {{ trans('cruds.product_category_prices.fields.product_category') }}
                         </th>
                         <td>
-                            {{ $product_category_prices->productCategory->name }}
+                            {{ $product_category_prices->sellerProductCategory->name }}
                         </td>
                     </tr>
 

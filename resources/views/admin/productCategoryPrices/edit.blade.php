@@ -42,10 +42,10 @@
                             <label class="required" for="product_category_id">{{ trans('cruds.product.fields.product_category') }}</label>
                                 <select class="select2 mb-3" aria-label=".form-select-lg example" name="product_category_id" id="product_category_id">
                                     <option selected value="">Open this select menu</option>
-                                    @foreach ($productCategories as $key => $ProductCategory)
+                                    @foreach ($sellerProductCategory as $key => $sellerProductCategory)
                                         <option  value="{{ $key }}" @if ($key == $product_category_prices->product_category_id)
                                             selected
-                                        @endif>{{ $ProductCategory }}</option>
+                                        @endif>{{ $sellerProductCategory }}</option>
                                     @endforeach
                                 </select>
                             <span class="product_category_id_error"></span>

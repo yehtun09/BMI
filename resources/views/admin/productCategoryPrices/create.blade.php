@@ -44,8 +44,8 @@
                                     name="product_category_id" id="product_category_id" value="{{ old('product_category_id', '') }}" > --}}
                                     <select class="select2 mb-3" aria-label="form-select-lg example" name="product_category_id" id="product_category_id">
                                         <option selected value="">Open this select menu</option>
-                                        @foreach ($productCategories as $key => $product_category)
-                                            <option  value="{{ $key }}">{{ $product_category }}</option>
+                                        @foreach ($sellerProductCategory as $key => $seller_product_category)
+                                            <option  value="{{ $key }}">{{ $seller_product_category }}</option>
                                         @endforeach
                                     </select>
                                 <span class="product_category_id_error"></span>

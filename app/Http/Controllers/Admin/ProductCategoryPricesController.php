@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductCategoryPricesRequest;
 use App\Http\Requests\UpdateProductCategoryPricesRequest;
 use App\Models\Product;
-use App\Models\ProductCategory;
+use App\Models\SellerProductCategory;
 use App\Models\ProductCategoryPrices;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -14,27 +14,27 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ProductCategoryPricesController extends Controller
 {
-    protected $productCategories;
+    protected $sellerProductCategory;
     protected $product_category_prices;
     protected $products;
-    public function __construct(ProductCategoryPrices $product_category_prices,ProductCategory $productCategory,Product $product)
+    public function __construct(ProductCategoryPrices $product_category_prices,SellerProductCategory $sellerProductCategory,Product $product)
     {
         $this->product_category_prices = $product_category_prices;
-        $this->productCategories = $productCategory;
+        $this->sellerProductCategory = $sellerProductCategory;
         $this->products = $product;
     }
     public function index()
     {
         abort_if(Gate::denies("product_category_prices_access"), Response::HTTP_FORBIDDEN,"403 Forbidden");
-        $product_category_prices = $this->product_category_prices->get();
+        $product_category_prices = $this->product_category_prices->with('sellerProductCategory')->get();
         return view('admin.productCategoryPrices.index',compact('product_category_prices'));
     }
     public function create()
     {
         abort_if(Gate::denies("product_category_prices_create"), Response::HTTP_FORBIDDEN,"403 Forbidden");
-        $productCategories = $this->productCategories->all()->pluck('name','id');
-        $product_category_prices = $this->product_category_prices->pluck('name','id');
-        return view('admin.productCategoryPrices.create',compact(['product_category_prices', 'productCategories']));
+        $product_category_prices = $this->product_category_prices->all();
+        $sellerProductCategory = $this->sellerProductCategory->all()->pluck('name','id');
+        return view('admin.productCategoryPrices.create',compact(['product_category_prices', 'sellerProductCategory']));
     }
     public function store(StoreProductCategoryPricesRequest $request)
     {
@@ -46,21 +46,21 @@ class ProductCategoryPricesController extends Controller
     public function show($id)
     {
         abort_if(Gate::denies("product_category_prices_show"), Response::HTTP_FORBIDDEN,"403 Forbidden");
-        $product_category_prices = $this->product_category_prices->findOrFail($id);
+        $product_category_prices = $this->product_category_prices->with('sellerProductCategory')->findOrFail($id);
         return view('admin.productCategoryPrices.show',compact('product_category_prices'));
     }
     public function edit($id)
     {
         abort_if(Gate::denies("product_category_prices_edit"), Response::HTTP_FORBIDDEN,"403 Forbidden");
         // $product_category_prices = $this->product_category_prices->all();
-        $productCategories = $this->productCategories->all()->pluck('name','id');
         $product_category_prices = $this->product_category_prices->findOrFail($id);
-        return view('admin.productCategoryPrices.edit',compact(['product_category_prices', 'productCategories']));
+        $sellerProductCategory = $this->sellerProductCategory->all()->pluck('name','id');
+        return view('admin.productCategoryPrices.edit',compact(['product_category_prices', 'sellerProductCategory']));
     }
     public function update(UpdateProductCategoryPricesRequest $request, $id)
     {
         abort_if(Gate::denies("product_category_prices_edit"), Response::HTTP_FORBIDDEN,"403 Forbidden");
-        $product_category_prices = $this->product_category_prices->findOrFail($id);
+        $product_category_prices = $this->product_category_prices->with('sellerProductCategory')->findOrFail($id);
         $product_category_prices->update($request->all());
         // $product_category_prices->product_category_prices()->sync($request->input('product_category_prices', []));
 
